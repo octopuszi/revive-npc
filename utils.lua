@@ -15,12 +15,14 @@ function DrawText3Ds(x,y,z, text)
     DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 0, 0, 0, 80)
 end
 
+-- this part below is copied from esx_ambulancejob
+
 function EndDeathCam()
     ClearFocus()
     RenderScriptCams(false, false, 0, true, false)
     DestroyCam(cam, false)
     cam = nil
-  end
+end
 
 function RespawnPed(ped, coords, heading)
     SetEntityCoordsNoOffset(ped, coords.x, coords.y, coords.z, false, false, false)
@@ -32,7 +34,7 @@ function RespawnPed(ped, coords, heading)
     TriggerServerEvent('esx:onPlayerSpawn')
     TriggerEvent('esx:onPlayerSpawn')
     TriggerEvent('playerSpawned') -- compatibility with old scripts, will be removed soon
-  end
+end
 
 function reviveSelf()
     local playerPed = PlayerPedId()
@@ -54,4 +56,4 @@ function reviveSelf()
     ClearExtraTimecycleModifier()
     EndDeathCam()
     DoScreenFadeIn(800)
-  end
+end

@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'octo'
 description 'Healing NPCs'
-version '1.0'
+version '2.0'
 
 client_scripts {
   '@es_extended/locale.lua',
